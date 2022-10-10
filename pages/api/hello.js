@@ -22,12 +22,14 @@ async function addItem(text) {
           ],
         },
         Type: {
+          type: "select",
           select: {
             name: "tool",
             color: "red",
           },
         },
         Url: {
+          type: "url",
           url: "https://test.com",
         },
       },
