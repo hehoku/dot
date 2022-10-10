@@ -10,14 +10,25 @@ async function addItem(text) {
     const response = await notion.pages.create({
       parent: { database_id: databaseId },
       properties: {
-        title: {
+        "Project Name": {
+          type: "title",
           title: [
             {
+              type: "text",
               text: {
                 content: text,
               },
             },
           ],
+        },
+        Type: {
+          select: {
+            name: "tool",
+            color: "red",
+          },
+        },
+        Url: {
+          url: "https://test.com",
         },
       },
     });
