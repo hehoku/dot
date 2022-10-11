@@ -5,7 +5,9 @@ require("dotenv").config();
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
+console.log(process.env.NOTION_KEY);
 async function addItem(text) {
+  console.log(process.env.NOTION_KEY);
   try {
     const response = await notion.pages.create({
       parent: { database_id: databaseId },
